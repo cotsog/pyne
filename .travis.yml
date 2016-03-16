@@ -3,14 +3,13 @@ language: python
 python:
   # We don't actually use the Travis Python, but this keeps it organized.
   - "2.7"
-  - "3.4"
-  - "3.5"
 services:
   - docker
 before_install:
   - docker pull pynedist/pyne-ubuntu
 install:
-  - docker run pynedist/pyne-ubuntu /bin/bash -c "cd /root/opt/ ; git clone https://github.com/pyne/pyne"
+  - docker run pynedist/pyne-ubuntu /bin/bash -c "ls /root/opt"
+  - docker run pynedist/pyne-ubuntu /bin/bash -c "cd /root/opt/ ; git clone https://github.com/pyne/pyne ; cd pyne ; ls -al"
   - docker run pynedist/pyne-ubuntu /bin/bash -c "ls /root/opt"
   - docker run pynedist/pyne-ubuntu /bin/bash -c "ls /root/opt/pyne"
   - docker run pynedist/pyne-ubuntu /bin/bash -c "cd /root/opt/pyne"
